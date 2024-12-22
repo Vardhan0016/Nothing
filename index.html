@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function showForgotPasswordMessage(event) {
+            event.preventDefault(); // Prevent the default behavior of the link
+            alert("Chi edi kuda gurutu ledha Mangolia Pandhi .Hurt ayina po. Sare hint tesuko: Date = Month + 1. Siggu undali.");
+        }
+
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent form from submitting by default
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Check username and password
+            if (username === "Kutti" && password === "04-03-2023") {
+                window.location.href = "next.html"; // Redirect to next.html
+            } else {
+                document.getElementById("error-message").textContent = "Username or password is incorrect.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="loginbox">
+        <img src="avatar.png" class="avatar" alt="User Avatar">
+        <h1>Login Here</h1>
+        <form onsubmit="validateLogin(event)">
+            <p>Username</p>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <p>Password</p>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <input type="submit" value="Login">
+            <p id="error-message" style="color: red;"></p>
+            <a href="#" onclick="showForgotPasswordMessage(event)">Password Gurutuled</a><br>
+        </form>
+    </div>
+</body>
+</html>
+
